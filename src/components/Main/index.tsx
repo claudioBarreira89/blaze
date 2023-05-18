@@ -34,12 +34,12 @@ const Main = () => {
     if (!sdkRef.current) {
       const socialLoginSDK = new SocialLogin();
       const signature1 = await socialLoginSDK.whitelistUrl(
-        "https://localhost:3000"
+        "https://blaze-puce.vercel.app/"
       );
       await socialLoginSDK.init({
         chainId: ethers.utils.hexValue(ChainId.GOERLI),
         whitelistUrls: {
-          "https://localhost:3000": signature1,
+          "https://blaze-puce.vercel.app/": signature1,
         },
       });
       sdkRef.current = socialLoginSDK;
